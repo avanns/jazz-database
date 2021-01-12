@@ -1,0 +1,67 @@
+@model MvcJazz.Models.AlbumYearViewModel
+
+@{
+    ViewData["Title"] = "Jazz Record Database";
+}
+<body class="vinyls-bkg">
+
+<h2 class="white-txt">Search the database:</h2>
+
+<p>
+    <a asp-action="Create" class="btn-outline-light">Add record</a>
+</p>
+
+<form asp-controller="RecordSearch" asp-action="Index" method="get">
+    <p class="white-txt">
+        Year:
+        <select asp-for="RecordingYear" asp-items="Model.Years">
+                    <option value="">All</option>
+                </select>
+        Title: <input type="text" asp-for="SearchString"/>
+        <input type="submit" value="Filter"/>
+    </p>
+</form>
+
+<table class="table white-bkg">
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Albums[0].Artist)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Albums[0].Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Albums[0].RecordingDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Albums[0].Personnel)
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.Albums) {
+        <tr>
+            <td class="nowrap">
+                @Html.DisplayFor(modelItem => item.Artist)
+            </td>
+            <td class="nowrap">
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td class="nowrap">
+                @Html.DisplayFor(modelItem => item.RecordingDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Personnel)
+            </td>
+            <td class="nowrap">
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+</body>
