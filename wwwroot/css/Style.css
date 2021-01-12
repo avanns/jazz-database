@@ -1,0 +1,56 @@
+body {
+    Font-Family: 'Alegreya', Serif;
+    Font-Size: 17px;
+}
+
+h1, h2 {
+    Font-Family: 'Bree Serif', Serif;
+    Font-Size: 43px;
+}
+
+td.nowrap {
+    white-space: nowrap;
+}
+
+.white-quote {
+    background: hsla(360, 100%, 100%, 0.9);
+    padding: 20%;
+    text-align: justify;
+    font-size: 1.1em;
+}
+
+.white-quote img {
+    width: 15%;
+    display: block;
+    margin: 0 auto 10% auto;
+}
+
+.vinyls-bkg {
+    background-image: url("../images/jazz vinyls smaller.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.white-bkg {
+    background-color: hsla(360, 100%, 100%, 0.9);
+}
+
+.white-txt {
+    color: hsla(360, 100%, 100%, 0.9);
+}
+
+.wider-spacing {
+    letter-spacing: 0.1rem;
+}
+
+.navbar-aub {
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+}
+
+.padding-on-top {
+    padding-top: 9%;
+}
